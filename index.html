@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cabina Inmobiliaria NERI</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0} :root{--black:#0A0A0A;--black-2:#111;--black-3:#181818;--gold:#C6A86B;--gold-light:#E2C98A;--gold-dim:rgba(198,168,107,.12);--gold-border:rgba(198,168,107,.24);--white:#fff;--white-60:rgba(255,255,255,.60);--white-35:rgba(255,255,255,.35);--white-18:rgba(255,255,255,.18);--white-08:rgba(255,255,255,.08);--white-04:rgba(255,255,255,.04);--font-display:'Bebas Neue',sans-serif;--font-body:'Montserrat',sans-serif;--font-editorial:'Cormorant Garamond',serif}
+body{background:radial-gradient(circle at 20% 0%,rgba(198,168,107,.10),transparent 28%),var(--black);color:var(--white);font-family:var(--font-body);min-height:100vh}.top{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.94);backdrop-filter:blur(22px);border-bottom:1px solid var(--white-08);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:18px}.logo{font-family:var(--font-display);font-size:26px;letter-spacing:5px;color:var(--gold)}.sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--white-35);font-weight:700}.clock{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}.hero{padding:52px 28px 28px;max-width:1260px;margin:0 auto}.eyebrow{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}.title{font-family:var(--font-display);font-size:clamp(48px,8vw,92px);letter-spacing:4px;line-height:.88}.quote{font-family:var(--font-editorial);font-style:italic;font-size:24px;color:var(--white-60);margin-top:18px;max-width:780px;line-height:1.35}.console{max-width:1260px;margin:0 auto;padding:20px 28px 64px;display:grid;grid-template-columns:320px 1fr;gap:18px}.panel,.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--white-08);border-radius:18px}.panel{padding:18px;position:sticky;top:82px;height:fit-content}.label{font-size:8px;letter-spacing:3px;color:var(--gold);font-weight:700;text-transform:uppercase;margin:18px 0 8px}.search{width:100%;background:#050505;color:white;border:1px solid var(--gold-border);border-radius:12px;padding:16px;font-family:var(--font-body);outline:none}.select{width:100%;background:#090909;color:var(--white-60);border:1px solid var(--white-08);border-radius:12px;padding:12px;margin-bottom:8px;font-family:var(--font-body)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}.stat{border:1px solid var(--white-08);padding:12px;border-radius:12px;background:rgba(0,0,0,.2)}.stat b{font-family:var(--font-display);font-size:26px;color:var(--gold);letter-spacing:2px}.stat span{display:block;font-size:9px;color:var(--white-35);letter-spacing:2px;text-transform:uppercase}.results{display:flex;flex-direction:column;gap:14px}.card{padding:20px}.card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:1px solid var(--white-08);padding-bottom:14px;margin-bottom:16px}.id{font-size:8px;letter-spacing:2px;color:var(--white-35);text-transform:uppercase}.situation{font-family:var(--font-display);font-size:30px;letter-spacing:2px;margin-top:6px}.badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.badge{font-size:8px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--white-08);padding:6px 9px;border-radius:999px;color:var(--white-35)}.badge.hot{color:var(--gold);background:var(--gold-dim);border-color:var(--gold-border)}.badge.warm{color:#dfc386;border-color:rgba(223,195,134,.25)}.badge.cold{color:rgba(255,255,255,.38)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{border:1px solid var(--white-08);border-radius:14px;padding:14px;background:rgba(0,0,0,.22)}.box h4{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}.box p,.box li{font-size:13px;line-height:1.65;color:var(--white-60);font-weight:300}.message{font-size:15px!important;color:white!important}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:1px solid var(--gold-border);background:var(--gold-dim);color:var(--gold);border-radius:10px;padding:11px 13px;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;cursor:pointer;font-family:var(--font-body)}button:hover{background:var(--gold);color:var(--black)}.empty{padding:48px;text-align:center;color:var(--white-35);border:1px dashed var(--white-08);border-radius:18px}.toast{position:fixed;right:22px;bottom:22px;background:var(--gold);color:#0A0A0A;padding:13px 16px;border-radius:12px;font-weight:700;font-size:12px;opacity:0;transform:translateY(10px);transition:.25s}.toast.show{opacity:1;transform:translateY(0)}.varbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.var{font-size:10px;border:1px solid var(--white-08);padding:6px 8px;border-radius:8px;color:var(--white-35)}@media(max-width:900px){.console{grid-template-columns:1fr}.panel{position:relative;top:0}.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.card-head{flex-direction:column}.badges{justify-content:flex-start}}
+</style>
+<style>
+.login-gate{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle at 30% 0%,rgba(198,168,107,.12),transparent 30%),#050505;display:flex;align-items:center;justify-content:center;padding:24px}.login-box{width:min(420px,100%);border:1px solid rgba(198,168,107,.24);border-radius:22px;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:0 30px 100px rgba(0,0,0,.5)}.login-box h2{font-family:var(--font-display);font-size:42px;letter-spacing:3px;margin-bottom:8px}.login-box p{font-size:12px;line-height:1.7;color:var(--white-35);margin-bottom:18px}.login-box input{width:100%;background:#050505;color:#fff;border:1px solid var(--white-08);border-radius:12px;padding:14px;margin:7px 0;font-family:var(--font-body)}.login-error{font-size:11px;color:#ff8a8a;margin-top:10px;min-height:16px}.login-note{font-size:10px!important;color:var(--white-18)!important;margin-top:14px!important}.hidden{display:none!important}
+</style>
+
+</head>
+<body>
+
+<div class="login-gate" id="loginGate">
+  <div class="login-box">
+    <div class="eyebrow">Acceso privado</div>
+    <h2>CABINA NERI</h2>
+    <p>Entra con usuario y contraseña para abrir la librería operativa.</p>
+    <input id="loginUser" placeholder="Usuario" autocomplete="username" />
+    <input id="loginPass" placeholder="Contraseña" type="password" autocomplete="current-password" />
+    <button onclick="doLogin()">Entrar</button>
+    <div class="login-error" id="loginError"></div>
+    <p class="login-note">Usuario demo: neri · Contraseña demo: cabina2026</p>
+  </div>
+</div>
+<header class="top"><div class="brand"><div class="logo">NERI</div><div><div class="sub">Cabina inmobiliaria · Librería operativa</div><div class="sub">Mensajes para WhatsApp, campo y cierre</div></div></div><div class="clock" id="clock">Sistema activo</div></header>
+<section class="hero"><div class="eyebrow">Dirección emocional operativa</div><h1 class="title">CABINA<br>INMOBILIARIA</h1><p class="quote">“No gana quien contesta más rápido. Gana quien dispara la respuesta exacta en el momento exacto.”</p></section>
+<main class="console">
+<aside class="panel">
+  <div class="label">Buscar escenario</div><input class="search" id="q" placeholder="precio, crédito, ubicación, solo estoy viendo..." autofocus />
+  <div class="label">Tipo de cliente</div><select class="select" id="categoria"><option value="">Todos</option><option>comprador</option><option>vendedor</option><option>credito</option></select>
+  <div class="label">Temperatura</div><select class="select" id="temperatura"><option value="">Todas</option><option>HOT</option><option>WARM</option><option>COLD</option></select>
+  <div class="label">Etapa</div><select class="select" id="etapa"><option value="">Todas</option><option>primer_contacto</option><option>objecion</option><option>cita</option><option>seguimiento</option><option>post_visita</option><option>reactivacion</option><option>propietario_diagnostico</option></select>
+  <div class="actions"><button onclick="resetFilters()">Limpiar</button><button onclick="copyVisible()">Copiar primera</button></div>
+  <div class="stats"><div class="stat"><b id="total">0</b><span>Mensajes</span></div><div class="stat"><b id="shown">0</b><span>Filtrados</span></div></div>
+</aside>
+<section class="results" id="results"></section>
+</main><div class="toast" id="toast">Copiado</div>
+<script>
+const data = [
+  {
+    "id": "comprador_precio_001",
+    "categoria": "comprador",
+    "temperatura": "WARM",
+    "etapa": "objecion",
+    "situacion": "Pregunta precio antes de dar contexto",
+    "frase_cliente": "¿Cuánto cuesta?",
+    "intencion_oculta": "Quiere filtrar rápido, comparar o controlar la conversación sin revelar intención real.",
+    "respuesta_whatsapp": "El precio es $[PRECIO]. Lo importante es revisar si por zona, distribución, estado y forma de pago tiene sentido para ti. Si esos puntos están alineados, entonces sí vale la pena avanzar a una visita de validación.",
+    "respuesta_campo": "Claro, el precio es $[PRECIO]. Pero más que verlo solo como número, conviene revisar si esta casa empata con tu forma de compra: zona, distribución, estado y forma de pago.",
+    "variables": [
+      "NOMBRE",
+      "PRECIO",
+      "ZONA",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Está en oferta",
+      "Aprovecha",
+      "Es negociable",
+      "¿Cuándo la quiere ver?"
+    ],
+    "siguiente_paso": "Validar forma de pago y zona antes de proponer visita.",
+    "tags": [
+      "precio",
+      "cuanto cuesta",
+      "valor",
+      "costo"
+    ]
+  },
+  {
+    "id": "comprador_ubicacion_001",
+    "categoria": "comprador",
+    "temperatura": "COLD",
+    "etapa": "objecion",
+    "situacion": "Pide ubicación exacta sin validar interés",
+    "frase_cliente": "¿Dónde está exactamente?",
+    "intencion_oculta": "Puede querer pasar por fuera, comparar o saltarse el proceso de seguridad.",
+    "respuesta_whatsapp": "La propiedad está en [ZONA]. Por seguridad del propietario, la ubicación exacta se comparte cuando la visita queda confirmada. Si la zona sí te funciona, revisamos disponibilidad.",
+    "respuesta_campo": "Está en [ZONA]. La ubicación exacta la cuidamos hasta confirmar visita, por seguridad de la propiedad y del propietario.",
+    "variables": [
+      "ZONA",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Te mando la ubicación",
+      "Pásale cuando quieras",
+      "Ahí está el pin"
+    ],
+    "siguiente_paso": "Confirmar si la zona le funciona antes de abrir visita.",
+    "tags": [
+      "ubicacion",
+      "direccion",
+      "pin",
+      "referencia",
+      "donde"
+    ]
+  },
+  {
+    "id": "comprador_credito_001",
+    "categoria": "credito",
+    "temperatura": "WARM",
+    "etapa": "primer_contacto",
+    "situacion": "Pregunta si aceptan crédito",
+    "frase_cliente": "¿Aceptan crédito?",
+    "intencion_oculta": "Hay intención real, pero falta validar viabilidad financiera y tiempos.",
+    "respuesta_whatsapp": "Sí, puede revisarse con crédito. Lo importante es validar desde el inicio si tu crédito está listo para esta operación o si habría que ajustar algo antes de avanzar. Eso evita visitas que después no se pueden concretar.",
+    "respuesta_campo": "Sí acepta crédito. Antes de verla, conviene revisar si tu crédito realmente empata con el valor y tiempos de esta propiedad.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD",
+      "PRECIO"
+    ],
+    "no_decir": [
+      "Sí, sin problema",
+      "Aceptamos todos",
+      "Solo mándame tu crédito"
+    ],
+    "siguiente_paso": "Pedir tipo de crédito, monto aproximado aprobado y enganche disponible.",
+    "tags": [
+      "credito",
+      "infonavit",
+      "fovissste",
+      "banco",
+      "financiamiento"
+    ]
+  },
+  {
+    "id": "comprador_solo_viendo_001",
+    "categoria": "comprador",
+    "temperatura": "COLD",
+    "etapa": "objecion",
+    "situacion": "Dice que solo está viendo opciones",
+    "frase_cliente": "Solo estoy viendo",
+    "intencion_oculta": "No quiere presión, está explorando o aún no tiene claridad de compra.",
+    "respuesta_whatsapp": "No pasa nada. De hecho, ver opciones sin estructura suele cansar más que ayudar. Si me dices qué estás tratando de resolver con tu próxima casa, puedo decirte si esta propiedad merece tu atención o no.",
+    "respuesta_campo": "Está bien. Solo te diría algo: ver por ver muchas veces confunde. Si entiendo qué estás buscando resolver, te digo si esta opción vale la pena para ti.",
+    "variables": [
+      "PROPIEDAD",
+      "ZONA"
+    ],
+    "no_decir": [
+      "Avísame si te interesa",
+      "Sin compromiso",
+      "Entonces luego me dices"
+    ],
+    "siguiente_paso": "Hacer una pregunta de diagnóstico: zona, presupuesto o motivo de cambio.",
+    "tags": [
+      "solo estoy viendo",
+      "viendo opciones",
+      "informacion",
+      "curioso"
+    ]
+  },
+  {
+    "id": "comprador_fotos_001",
+    "categoria": "comprador",
+    "temperatura": "COLD",
+    "etapa": "objecion",
+    "situacion": "Pide más fotos sin contexto",
+    "frase_cliente": "¿Me manda más fotos?",
+    "intencion_oculta": "Quiere consumir información sin entrar todavía a decisión.",
+    "respuesta_whatsapp": "Claro. Antes de mandarte más material, te diría algo importante: las fotos ayudan, pero no siempre explican si una casa realmente encaja. Lo que conviene revisar es zona, distribución, forma de pago y momento de compra. Con eso te mando información más útil, no solo más imágenes.",
+    "respuesta_campo": "Sí te las puedo compartir. Solo que las fotos no siempre dicen si una casa te conviene; primero vale la pena ubicar zona, distribución y forma de pago.",
+    "variables": [
+      "PROPIEDAD",
+      "ZONA"
+    ],
+    "no_decir": [
+      "Claro, ahí van todas",
+      "Te mando todo",
+      "Dime si te gusta"
+    ],
+    "siguiente_paso": "Enviar material solo después de hacer una pregunta de filtro.",
+    "tags": [
+      "fotos",
+      "imagenes",
+      "video",
+      "recorrido"
+    ]
+  },
+  {
+    "id": "comprador_visita_001",
+    "categoria": "comprador",
+    "temperatura": "HOT",
+    "etapa": "cita",
+    "situacion": "Quiere visitar la propiedad",
+    "frase_cliente": "¿Cuándo puedo verla?",
+    "intencion_oculta": "Tiene interés activo; hay que ordenar visita sin perder autoridad.",
+    "respuesta_whatsapp": "Por tu perfil, sí vale la pena hacer una visita. No como recorrido casual, sino como validación final para saber si esta propiedad realmente encaja contigo. Tengo espacio [HORARIO_1] o [HORARIO_2]. ¿Cuál te funciona mejor?",
+    "respuesta_campo": "Sí tiene sentido verla. La visita nos sirve para validar distribución, entorno, sensación real y forma de pago. Te puedo abrir [HORARIO_1] o [HORARIO_2].",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD",
+      "HORARIO_1",
+      "HORARIO_2"
+    ],
+    "no_decir": [
+      "Cuando quieras",
+      "Te la muestro hoy mismo",
+      "Pásame tus datos"
+    ],
+    "siguiente_paso": "Confirmar horario, nombre completo y forma de pago.",
+    "tags": [
+      "visita",
+      "cita",
+      "verla",
+      "recorrido",
+      "agenda"
+    ]
+  },
+  {
+    "id": "comprador_negociable_001",
+    "categoria": "comprador",
+    "temperatura": "WARM",
+    "etapa": "objecion",
+    "situacion": "Pregunta si el precio es negociable",
+    "frase_cliente": "¿Es negociable?",
+    "intencion_oculta": "Quiere medir margen sin demostrar interés ni capacidad.",
+    "respuesta_whatsapp": "Cualquier ajuste serio se revisa después de validar interés real, forma de pago y condiciones. Antes de hablar de negociación, conviene saber si la propiedad realmente encaja contigo.",
+    "respuesta_campo": "Se puede revisar una propuesta seria, pero primero necesitamos saber si la propiedad sí te funciona y bajo qué forma de pago avanzarías.",
+    "variables": [
+      "PRECIO",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Sí, algo se baja",
+      "Todo se negocia",
+      "Haz una oferta"
+    ],
+    "siguiente_paso": "Llevar a visita o validación de forma de pago antes de negociación.",
+    "tags": [
+      "negociable",
+      "ultimo precio",
+      "rebaja",
+      "oferta"
+    ]
+  },
+  {
+    "id": "comprador_caro_001",
+    "categoria": "comprador",
+    "temperatura": "WARM",
+    "etapa": "objecion",
+    "situacion": "Dice que está caro",
+    "frase_cliente": "Está caro",
+    "intencion_oculta": "Está comparando por precio, no por valor completo.",
+    "respuesta_whatsapp": "Entiendo. Solo cuidaría no comparar únicamente por precio. En una propiedad también pesan zona, estado, distribución, seguridad jurídica y forma de pago. Si quieres, revisamos contra qué la estás comparando y te digo si tiene sentido o no.",
+    "respuesta_campo": "Puede sentirse alto si lo ves solo como número. La comparación correcta es con zona, estado, distribución y condiciones reales de operación.",
+    "variables": [
+      "ZONA",
+      "PRECIO",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Se puede negociar",
+      "Está barata para la zona",
+      "Es lo que vale"
+    ],
+    "siguiente_paso": "Pedir referencia de comparación y recuperar valor.",
+    "tags": [
+      "caro",
+      "precio alto",
+      "comparando",
+      "barato"
+    ]
+  },
+  {
+    "id": "comprador_pensar_001",
+    "categoria": "comprador",
+    "temperatura": "WARM",
+    "etapa": "seguimiento",
+    "situacion": "Dice que lo va a pensar",
+    "frase_cliente": "Lo voy a pensar",
+    "intencion_oculta": "Tiene duda no nombrada: precio, forma de pago, zona, familia o miedo a decidir.",
+    "respuesta_whatsapp": "Claro. Solo para que lo pienses con información correcta: ¿lo que necesitas revisar es precio, forma de pago, zona o sensación de la propiedad? Son dudas distintas y cada una se resuelve diferente.",
+    "respuesta_campo": "Claro, piénsalo. Pero dime algo: ¿qué parte necesitas ordenar mejor, precio, crédito, zona o sensación de la casa? No todas las dudas se resuelven igual.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Avísame",
+      "Quedo pendiente",
+      "No tardes porque se va"
+    ],
+    "siguiente_paso": "Identificar la duda real y enviar respuesta específica.",
+    "tags": [
+      "pensar",
+      "lo reviso",
+      "despues",
+      "duda"
+    ]
+  },
+  {
+    "id": "comprador_postvisita_hot_001",
+    "categoria": "comprador",
+    "temperatura": "HOT",
+    "etapa": "post_visita",
+    "situacion": "Después de visita con interés alto",
+    "frase_cliente": "Me gustó mucho",
+    "intencion_oculta": "Hay emoción; se debe pasar a condiciones sin presionar.",
+    "respuesta_whatsapp": "Me da gusto que te haya hecho sentido. El siguiente paso no es apartar por presión; es revisar condiciones: forma de pago, tiempos, documentos y viabilidad. Si eso está claro, entonces sí podemos avanzar con seguridad.",
+    "respuesta_campo": "Si te hizo sentido en persona, ahora lo correcto es revisar condiciones. Así no decides por emoción, sino con claridad.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Entonces aparta",
+      "Se te puede ir",
+      "Dame anticipo"
+    ],
+    "siguiente_paso": "Revisar condiciones y ruta de apartado.",
+    "tags": [
+      "post visita",
+      "me gusto",
+      "interes",
+      "apartado",
+      "cierre"
+    ]
+  },
+  {
+    "id": "vendedor_comision_001",
+    "categoria": "vendedor",
+    "temperatura": "WARM",
+    "etapa": "propietario_diagnostico",
+    "situacion": "Propietario pregunta comisión antes de entender proceso",
+    "frase_cliente": "¿Cuánto cobras de comisión?",
+    "intencion_oculta": "Quiere comparar asesores como costo, no como proceso de protección patrimonial.",
+    "respuesta_whatsapp": "Entiendo la pregunta. La comisión no debería verse aislada, sino contra el tipo de proceso que protege tu operación. Lo importante es qué se hace antes, durante y después de publicar para evitar errores, desgaste o negociación débil.",
+    "respuesta_campo": "Te entiendo. Solo cuidaría no ver la comisión separada del proceso. Una venta mal preparada puede costar más que una comisión bien justificada.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Cobro X%",
+      "Soy más barato",
+      "Te puedo bajar la comisión"
+    ],
+    "siguiente_paso": "Proponer diagnóstico antes de hablar solo de porcentaje.",
+    "tags": [
+      "comision",
+      "porcentaje",
+      "cuanto cobras",
+      "honorarios"
+    ]
+  },
+  {
+    "id": "vendedor_rapido_001",
+    "categoria": "vendedor",
+    "temperatura": "HOT",
+    "etapa": "propietario_diagnostico",
+    "situacion": "Propietario quiere vender rápido",
+    "frase_cliente": "Necesito vender rápido",
+    "intencion_oculta": "Tiene presión emocional o económica; puede aceptar mala estrategia si no se ordena.",
+    "respuesta_whatsapp": "Entiendo que quieras vender pronto. Justo por eso conviene no improvisar. Salir rápido sin preparación puede generar visitas sin calidad, ofertas débiles o desgaste innecesario. Primero ordenamos la propiedad; después la presentamos.",
+    "respuesta_campo": "Si hay urgencia, con más razón hay que ordenar antes de publicar. La prisa sin estrategia suele atraer ofertas débiles.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Yo te la vendo rápido",
+      "Tengo compradores",
+      "La publicamos hoy"
+    ],
+    "siguiente_paso": "Agendar revisión documental y estrategia de salida.",
+    "tags": [
+      "vender rapido",
+      "urgente",
+      "prisa",
+      "necesito vender"
+    ]
+  },
+  {
+    "id": "vendedor_ya_publico_001",
+    "categoria": "vendedor",
+    "temperatura": "WARM",
+    "etapa": "propietario_diagnostico",
+    "situacion": "Ya publicó y no vendió",
+    "frase_cliente": "Ya la publiqué y no se vende",
+    "intencion_oculta": "Está frustrado; necesita entender diferencia entre publicar y posicionar.",
+    "respuesta_whatsapp": "Lo que te está pasando es más común de lo que parece. Muchas propiedades no fallan por ser malas, fallan porque salen al mercado sin posicionamiento claro. Publicar no es lo mismo que preparar una venta.",
+    "respuesta_campo": "Tal vez la propiedad no es el problema. Muchas veces el problema es cómo salió al mercado, con qué precio, qué narrativa y qué filtro de compradores.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD",
+      "ZONA"
+    ],
+    "no_decir": [
+      "Está mal publicada",
+      "Tu precio está mal",
+      "Yo sí puedo"
+    ],
+    "siguiente_paso": "Ofrecer diagnóstico de mercado y preparación.",
+    "tags": [
+      "ya publique",
+      "no se vende",
+      "sin resultados",
+      "mercado"
+    ]
+  },
+  {
+    "id": "vendedor_precio_001",
+    "categoria": "vendedor",
+    "temperatura": "WARM",
+    "etapa": "propietario_diagnostico",
+    "situacion": "Quiere saber cuánto vale su propiedad",
+    "frase_cliente": "¿Cuánto vale mi casa?",
+    "intencion_oculta": "Busca certeza, pero quizá espera un número emocional, no de mercado.",
+    "respuesta_whatsapp": "Para darte un valor serio no basta con ver metros y ubicación. Hay que revisar estado, documentos, competencia directa, absorción de zona y forma probable de compra. Si quieres, hacemos una revisión inicial y te digo un rango defendible, no un número improvisado.",
+    "respuesta_campo": "Te puedo dar un rango, pero no me gusta inventar números. Primero hay que revisar competencia, documentos, estado y demanda real de zona.",
+    "variables": [
+      "NOMBRE",
+      "ZONA",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Vale X sin verla",
+      "La podemos sacar cara",
+      "Yo te consigo más"
+    ],
+    "siguiente_paso": "Pedir datos base y agendar diagnóstico.",
+    "tags": [
+      "cuanto vale",
+      "avaluo",
+      "precio venta",
+      "valor propiedad"
+    ]
+  },
+  {
+    "id": "credito_mensualidad_001",
+    "categoria": "credito",
+    "temperatura": "WARM",
+    "etapa": "objecion",
+    "situacion": "Pregunta mensualidad aproximada",
+    "frase_cliente": "¿Cuánto pagaría al mes?",
+    "intencion_oculta": "Quiere aterrizar posibilidad real, no solo precio.",
+    "respuesta_whatsapp": "La mensualidad depende de monto de crédito, tasa, plazo, enganche y perfil bancario. Puedo darte una referencia, pero lo correcto es revisar tu escenario para no darte un número que después no corresponda. ¿Ya tienes crédito aprobado o apenas quieres calcularlo?",
+    "respuesta_campo": "La mensualidad puede cambiar mucho por tasa, plazo y enganche. Primero veamos si ya tienes crédito aprobado o si estás calculando posibilidad.",
+    "variables": [
+      "PRECIO",
+      "ENGANCHE",
+      "TIPO_CREDITO"
+    ],
+    "no_decir": [
+      "Más o menos pagas X",
+      "Seguro te queda en X",
+      "No es mucho"
+    ],
+    "siguiente_paso": "Separar aprobado vs. simulación y pasar a revisión de crédito.",
+    "tags": [
+      "mensualidad",
+      "cuanto pago",
+      "credito",
+      "tasa",
+      "enganche"
+    ]
+  },
+  {
+    "id": "seguimiento_no_responde_001",
+    "categoria": "comprador",
+    "temperatura": "WARM",
+    "etapa": "reactivacion",
+    "situacion": "No responde después de mostrar interés",
+    "frase_cliente": "Sin respuesta",
+    "intencion_oculta": "Bajó emoción, se ocupó o está evitando decidir.",
+    "respuesta_whatsapp": "[NOMBRE], dejo tu evaluación abierta. Si esta propiedad sigue siendo opción para ti, conviene definir si avanzamos a visita o si la descartamos con claridad. Así no pierdes tiempo comparando algo que quizá ya no corresponde contigo.",
+    "respuesta_campo": "Te dejo abierta la opción, pero lo ideal es decidir si avanzamos o descartamos. La claridad también ayuda cuando no es la propiedad correcta.",
+    "variables": [
+      "NOMBRE",
+      "PROPIEDAD"
+    ],
+    "no_decir": [
+      "Hola, ¿sigues interesado?",
+      "Quedo pendiente",
+      "¿Qué pasó?"
+    ],
+    "siguiente_paso": "Cerrar bucle sin perseguir.",
+    "tags": [
+      "no responde",
+      "ghosting",
+      "seguimiento",
+      "reactivar"
+    ]
+  }
+];
+const $=id=>document.getElementById(id);
+const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function init(){$('total').textContent=data.length; bind(); render(); tick(); setInterval(tick,1000)}
+function bind(){['q','categoria','temperatura','etapa'].forEach(id=>$(id).addEventListener('input',render));}
+function score(item,q){if(!q)return 1; const hay=norm([item.situacion,item.frase_cliente,item.intencion_oculta,item.respuesta_whatsapp,item.respuesta_campo,item.siguiente_paso,(item.tags||[]).join(' ')].join(' ')); const parts=norm(q).split(/\s+/).filter(Boolean); return parts.reduce((a,p)=>a+(hay.includes(p)?1:0),0)}
+function filtered(){const q=$('q').value, cat=$('categoria').value, temp=$('temperatura').value, etapa=$('etapa').value; return data.map(x=>({...x,_score:score(x,q)})).filter(x=>(!q||x._score>0)&&(!cat||x.categoria===cat)&&(!temp||x.temperatura===temp)&&(!etapa||x.etapa===etapa)).sort((a,b)=>b._score-a._score)}
+function render(){const rows=filtered(); $('shown').textContent=rows.length; if(!rows.length){$('results').innerHTML='<div class="empty">No encontré ese escenario. Prueba: precio, ubicación, crédito, comisión, visita, pensar.</div>';return} $('results').innerHTML=rows.map(card).join('')}
+function card(x){return `<article class="card"><div class="card-head"><div><div class="id">${x.id}</div><div class="situation">${x.situacion}</div></div><div class="badges"><span class="badge">${x.categoria}</span><span class="badge ${x.temperatura.toLowerCase()}">${x.temperatura}</span><span class="badge">${x.etapa}</span></div></div><div class="grid"><div class="box"><h4>Frase del cliente</h4><p>“${x.frase_cliente}”</p></div><div class="box"><h4>Intención oculta</h4><p>${x.intencion_oculta}</p></div><div class="box"><h4>WhatsApp listo</h4><p class="message">${x.respuesta_whatsapp}</p><div class="actions"><button onclick='copyText(${JSON.stringify(x.respuesta_whatsapp)})'>Copiar WhatsApp</button></div></div><div class="box"><h4>Versión campo</h4><p>${x.respuesta_campo}</p><div class="actions"><button onclick='copyText(${JSON.stringify(x.respuesta_campo)})'>Copiar campo</button></div></div><div class="box"><h4>Variables</h4><div class="varbar">${(x.variables||[]).map(v=>`<span class="var">[${v}]</span>`).join('')}</div></div><div class="box"><h4>No decir</h4><ul>${(x.no_decir||[]).map(n=>`<li>${n}</li>`).join('')}</ul></div><div class="box" style="grid-column:1/-1"><h4>Siguiente paso</h4><p>${x.siguiente_paso}</p></div></div></article>`}
+function copyText(t){navigator.clipboard.writeText(t); toast('Copiado')}
+function copyVisible(){const rows=filtered(); if(rows[0]) copyText(rows[0].respuesta_whatsapp)}
+function resetFilters(){['q','categoria','temperatura','etapa'].forEach(id=>$(id).value=''); render()}
+function toast(t){$('toast').textContent=t; $('toast').classList.add('show'); setTimeout(()=>$('toast').classList.remove('show'),1300)}
+function tick(){const d=new Date(); $('clock').textContent=d.toLocaleString('es-MX',{weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit'})}
+
+function doLogin(){
+  const u=$('loginUser').value.trim().toLowerCase();
+  const p=$('loginPass').value.trim();
+  if(u==='neri' && p==='cabina2026'){
+    localStorage.setItem('neriCabinaAccess','ok');
+    $('loginGate').classList.add('hidden');
+  } else {
+    $('loginError').textContent='Usuario o contraseña incorrectos';
+  }
+}
+function checkLogin(){ if(localStorage.getItem('neriCabinaAccess')==='ok') $('loginGate').classList.add('hidden'); }
+
+checkLogin();
+init();
+</script>
+</body>
+</html>
